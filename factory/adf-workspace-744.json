@@ -1,0 +1,9 @@
+{
+	"name": "adf-workspace-744",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ed0c27a4-b3e7-467e-aae5-bf1b65c4d218",
+		"tenantId": "27ebf2ab-1001-4e71-839a-2c7553bf470d"
+	}
+}
