@@ -189,7 +189,7 @@
 								"source": {
 									"type": "AzureSqlSource",
 									"sqlReaderQuery": {
-										"value": "SELECT COUNT(*) FROM @{pipeline().parameters.p_schema}.@{pipeline().parameters.p_table} WHERE @{pipeline().parameters.p_cdc_col} > '@{activity('getLatestCdcDate').output.value[0].cdc}'",
+										"value": "SELECT * FROM @{pipeline().parameters.p_schema}.@{pipeline().parameters.p_table} WHERE @{pipeline().parameters.p_cdc_col} > '@{activity('getLatestCdcDate').output.value[0].cdc}'",
 										"type": "Expression"
 									},
 									"queryTimeout": "02:00:00",
