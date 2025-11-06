@@ -13,7 +13,7 @@
 						]
 					},
 					{
-						"activity": "Lookup1",
+						"activity": "LookupNewRows",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -30,6 +30,10 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"sqlReaderQuery": {
+							"value": "SELECT COUNT(*) FROM @{pipeline().parameters.p_schema}.@{pipeline().parameters.p_table} WHERE @{pipeline().parameters.p_cdc_col} > '@{activity('getLatestCdcDate').output.value[0].cdc}'",
+							"type": "Expression"
+						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -251,7 +255,7 @@
 				}
 			},
 			{
-				"name": "Lookup1",
+				"name": "LookupNewRows",
 				"type": "Lookup",
 				"dependsOn": [
 					{
@@ -272,11 +276,15 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"sqlReaderQuery": {
+							"value": "SELECT COUNT(*) FROM @{pipeline().parameters.p_schema}.@{pipeline().parameters.p_table} WHERE",
+							"type": "Expression"
+						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "spotify_DimArtist",
+						"referenceName": "azure_sql",
 						"type": "DatasetReference"
 					}
 				}
