@@ -224,7 +224,7 @@
 						"parameters": {
 							"p_container": "spotify-project",
 							"p_folder": "01-bronze/cdc",
-							"p_file": "emtpy.json"
+							"p_file": "empty.json"
 						}
 					}
 				],
