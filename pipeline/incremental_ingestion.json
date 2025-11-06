@@ -293,13 +293,15 @@
 		],
 		"parameters": {
 			"p_schema": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "dbo"
 			},
 			"p_table": {
 				"type": "string"
 			},
 			"p_cdc_col": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "updated_at"
 			}
 		},
 		"variables": {
