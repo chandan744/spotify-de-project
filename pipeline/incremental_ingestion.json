@@ -277,7 +277,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "SELECT COUNT(*) \nFROM \n    @{pipeline().parameters.p_schema}.@{pipeline().parameters.p_table}\nWHERE @{pipeline().parameters.p_cdc_col} > '@{activity('getLatestCdcDate').output.value[0].cdc}'",
+							"value": "SELECT COUNT(*) AS 'new_row_count'\nFROM \n    @{pipeline().parameters.p_schema}.@{pipeline().parameters.p_table}\nWHERE @{pipeline().parameters.p_cdc_col} > '@{activity('getLatestCdcDate').output.value[0].cdc}'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
