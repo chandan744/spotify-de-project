@@ -131,7 +131,7 @@
 				}
 			},
 			{
-				"name": "GetCdc",
+				"name": "maxCdc",
 				"type": "Script",
 				"dependsOn": [
 					{
@@ -158,7 +158,7 @@
 						{
 							"type": "Query",
 							"text": {
-								"value": "SELECT max(@{pipeline().parameters.p_cdc_col}) FROM @{pipeline().parameters.p_schema}.@{pipeline().parameters.p_table}",
+								"value": "SELECT max(@{pipeline().parameters.p_cdc_col}) as max_cdc FROM @{pipeline().parameters.p_schema}.@{pipeline().parameters.p_table}",
 								"type": "Expression"
 							}
 						}
