@@ -52,7 +52,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@greater(activity('LookupNewRows').output.new_row_count, 0)",
+						"value": "@greater(activity('LookupNewRows').output.firstRow.new_row_count, 0)",
 						"type": "Expression"
 					},
 					"ifTrueActivities": [
