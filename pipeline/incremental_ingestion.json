@@ -216,7 +216,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "azure_sql",
+									"referenceName": "spotify_DimArtist",
 									"type": "DatasetReference"
 								}
 							],
