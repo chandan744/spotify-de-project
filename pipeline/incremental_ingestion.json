@@ -302,6 +302,9 @@
 			"p_cdc_col": {
 				"type": "string",
 				"defaultValue": "updated_at"
+			},
+			"P_from_date": {
+				"type": "string"
 			}
 		},
 		"variables": {
