@@ -31,7 +31,10 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"p_container": "spotify-project",
-							"p_folder": "01-bronze/cdc",
+							"p_folder": {
+								"value": "@concat('01-bronze/', pipeline().parameters.p_table,'_cdc')",
+								"type": "Expression"
+							},
 							"p_file": "cdc.json"
 						}
 					},
@@ -149,7 +152,10 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"p_container": "spotify-project",
-										"p_folder": "01-bronze/cdc",
+										"p_folder": {
+											"value": "@concat('01-bronze/', pipeline().parameters.p_table,'_cdc')",
+											"type": "Expression"
+										},
 										"p_file": "empty.json"
 									}
 								}
@@ -160,7 +166,10 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"p_container": "spotify-project",
-										"p_folder": "01-bronze/cdc",
+										"p_folder": {
+											"value": "@concat('01-bronze/', pipeline().parameters.p_table,'_cdc')",
+											"type": "Expression"
+										},
 										"p_file": "cdc.json"
 									}
 								}
@@ -226,7 +235,10 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"p_sink_container": "spotify-project",
-										"p_sink_folder": "01-bronze/users",
+										"p_sink_folder": {
+											"value": "@concat('01-bronze/', pipeline().parameters.p_table)",
+											"type": "Expression"
+										},
 										"p_sink_file": {
 											"value": "@concat(pipeline().parameters.p_table, '_', variables('v_current_date'))",
 											"type": "Expression"
