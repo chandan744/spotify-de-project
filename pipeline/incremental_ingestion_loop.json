@@ -51,7 +51,7 @@
 									"parameters": {
 										"p_container": "spotify-project",
 										"p_folder": {
-											"value": "@concat('01-bronze/', pipeline().parameters.p_table,'_cdc')",
+											"value": "@concat('01-bronze/', item().table,'_cdc')",
 											"type": "Expression"
 										},
 										"p_file": "cdc.json"
@@ -309,7 +309,7 @@
 								"source": {
 									"type": "AzureSqlSource",
 									"sqlReaderQuery": {
-										"value": "SELECT COUNT(*) AS 'new_row_count'\nFROM \n    @{pipeline().parameters.p_schema}.@{pipeline().parameters.p_table}\nWHERE @{pipeline().parameters.p_cdc_col} > '@{if(empty(pipeline().parameters.P_from_date), activity('getLatestCdcDate').output.value[0].cdc, pipeline().parameters.P_from_date)}'",
+										"value": "SELECT COUNT(*) AS 'new_row_count'\nFROM \n    @{item().schema}.@{item().table}\nWHERE @{item().cdc_col} > '@{if(empty(item().from_date), activity('getLatestCdcDate').output.value[0].cdc, item().from_date)}'",
 										"type": "Expression"
 									},
 									"queryTimeout": "02:00:00",
