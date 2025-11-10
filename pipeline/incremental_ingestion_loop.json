@@ -361,22 +361,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"p_schema": {
-				"type": "string",
-				"defaultValue": "dbo"
-			},
-			"p_table": {
-				"type": "string"
-			},
-			"p_cdc_col": {
-				"type": "string",
-				"defaultValue": "updated_at"
-			},
-			"P_from_date": {
-				"type": "string"
-			}
-		},
 		"variables": {
 			"v_current_date": {
 				"type": "String"
