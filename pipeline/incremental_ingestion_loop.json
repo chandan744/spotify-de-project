@@ -51,7 +51,7 @@
 									"parameters": {
 										"p_container": "spotify-project",
 										"p_folder": {
-											"value": "@concat('01-bronze/', item().table,'_cdc')",
+											"value": "@concat('01-bronze/', 'spotify_', item().table,'_cdc')",
 											"type": "Expression"
 										},
 										"p_file": "cdc.json"
