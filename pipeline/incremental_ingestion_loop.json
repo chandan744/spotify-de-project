@@ -217,7 +217,7 @@
 											"source": {
 												"type": "AzureSqlSource",
 												"sqlReaderQuery": {
-													"value": "SELECT * \nFROM \n@{pipeline().parameters.p_schema}.@{pipeline().parameters.p_table} \nWHERE @{pipeline().parameters.p_cdc_col} > '@{if(empty(pipeline().parameters.P_from_date), activity('getLatestCdcDate').output.value[0].cdc, pipeline().parameters.P_from_date)}'",
+													"value": "SELECT * \nFROM \n@{item().schema}.@{item().table} \nWHERE @{item().cdc_col} > '@{if(empty(item().from_date), activity('getLatestCdcDate').output.value[0].cdc, item().from_date)}'",
 													"type": "Expression"
 												},
 												"queryTimeout": "02:00:00",
