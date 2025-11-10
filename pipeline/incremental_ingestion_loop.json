@@ -106,7 +106,7 @@
 												{
 													"type": "Query",
 													"text": {
-														"value": "SELECT max(@{pipeline().parameters.p_cdc_col}) as cdc FROM @{pipeline().parameters.p_schema}.@{pipeline().parameters.p_table}",
+														"value": "SELECT max(@{item().cdc_col}) as cdc FROM @{item().schema}.@{item().table}",
 														"type": "Expression"
 													}
 												}
@@ -172,7 +172,7 @@
 												"parameters": {
 													"p_container": "spotify-project",
 													"p_folder": {
-														"value": "@concat('01-bronze/', pipeline().parameters.p_table,'_cdc')",
+														"value": "@concat('01-bronze/', item().table,'_cdc')",
 														"type": "Expression"
 													},
 													"p_file": "empty.json"
@@ -186,7 +186,7 @@
 												"parameters": {
 													"p_container": "spotify-project",
 													"p_folder": {
-														"value": "@concat('01-bronze/', pipeline().parameters.p_table,'_cdc')",
+														"value": "@concat('01-bronze/', item().table,'_cdc')",
 														"type": "Expression"
 													},
 													"p_file": "cdc.json"
