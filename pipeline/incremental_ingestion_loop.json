@@ -255,11 +255,11 @@
 												"parameters": {
 													"p_sink_container": "spotify-project",
 													"p_sink_folder": {
-														"value": "@concat('01-bronze/', pipeline().parameters.p_table)",
+														"value": "@concat('01-bronze/', item().table)",
 														"type": "Expression"
 													},
 													"p_sink_file": {
-														"value": "@concat(pipeline().parameters.p_table, '_', variables('v_current_date'))",
+														"value": "@concat(item().table, '_', variables('v_current_date'))",
 														"type": "Expression"
 													}
 												}
