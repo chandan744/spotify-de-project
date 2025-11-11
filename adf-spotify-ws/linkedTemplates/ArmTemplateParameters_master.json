@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-spotify-ws"
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"azure_data_lake_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "azure-sql-db-744.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "workspace_db"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "admincsingh"
+		},
+		"azure_data_lake_properties_typeProperties_url": {
+			"value": "https://databricksdevstg744.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
